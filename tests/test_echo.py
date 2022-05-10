@@ -10,3 +10,5 @@ def test_echo():
 def test_echo_except():
     """ Stub test method"""
     assert "No" == echo("echo")
+    # with pytest.raises(TypeError("No")):
+    #     echo("echo")
