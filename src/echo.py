@@ -2,5 +2,5 @@
 def echo(value):
     """ stub method """
     if value == 'echo':
-        raise TypeError("No")
+        return "No"
     return value
