@@ -7,5 +7,5 @@ def test_echo():
     assert echo("abc") == "abc", "abc == abc"
 
 def test_echo_except():
-    with pytest.raises("tee"):
+    with pytest.raises(EOFError.mro):
         echo("echo")

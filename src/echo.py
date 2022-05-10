@@ -1,5 +1,6 @@
+""" Stub test"""
 def echo(value):
-    """ stub test """
+    """ stub method """
     if value == 'echo':
-        raise "tee"
+        raise EOFError.mro
     return value
