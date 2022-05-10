@@ -1,6 +1,6 @@
 """ Stub tests """
 import pytest
-from src import echo
+from src.echo import echo 
 
 def test_echo():
     """ Stub test method"""
