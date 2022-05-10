@@ -1,3 +1,6 @@
+"""
+Basic code for discordBot
+"""
 import discord
 
 client = discord.Client()
@@ -11,7 +14,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    """ Input:  Message:str 
+    """ Input:  Message:str
         Output: command:str
     """
     if client.user == message.author:
