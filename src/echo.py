@@ -2,5 +2,5 @@
 def echo(value):
     """ stub method """
     if value == 'echo':
-        raise EOFError.mro
+        raise TypeError("No")
     return value

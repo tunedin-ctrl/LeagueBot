@@ -1,11 +1,13 @@
 import pytest
 
-from src.echo import echo
-
+from src import echo
+""" Stub tests """
 def test_echo():
+    """ Stub test method"""
     assert echo("123") == "123", "123 == 123"
     assert echo("abc") == "abc", "abc == abc"
 
 def test_echo_except():
-    with pytest.raises(EOFError.mro):
+    """ Stub test method"""
+    with pytest.raises(TypeError("No")):
         echo("echo")
