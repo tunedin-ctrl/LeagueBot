@@ -4,10 +4,16 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
+    """
+    Initialise bot
+    """
     print(f'{client.user} bot user is ready to rumble!')
 
 @client.event
 async def on_message(message):
+    """ Input:  Message:str 
+        Output: command:str
+    """
     if client.user == message.author:
         return
 
