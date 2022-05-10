@@ -1,7 +1,7 @@
-import pytest
-
-from src import echo
 """ Stub tests """
+import pytest
+from src import echo
+
 def test_echo():
     """ Stub test method"""
     assert echo("123") == "123", "123 == 123"
