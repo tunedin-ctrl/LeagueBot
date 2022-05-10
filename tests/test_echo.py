@@ -1,5 +1,5 @@
 """ Stub tests """
-import pytest
+# import pytest
 from src.echo import echo
 
 def test_echo():
