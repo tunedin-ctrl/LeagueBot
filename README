@@ -2,7 +2,7 @@
 
 src/
 ├── api/
-├── clients/
+├── clients/ 
 │   └── bot_client.py
 ├── cogs/
 │   └── greetings.py
