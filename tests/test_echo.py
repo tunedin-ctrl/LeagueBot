@@ -1,6 +1,7 @@
 """ Stub tests """
-# import pytest
+import pytest
 from src.echo import echo
+from src.error import error
 
 def test_echo():
     """ Stub test method"""
@@ -8,7 +9,5 @@ def test_echo():
     assert echo("abc") == "abc", "abc == abc"
 
 def test_echo_except():
-    """ Stub test method"""
-    assert "No" == echo("echo")
-    # with pytest.raises(TypeError("No")):
-    #     echo("echo")
+    with pytest.raises(error.InputError):
+        echo("echo")
