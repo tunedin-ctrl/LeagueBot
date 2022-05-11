@@ -1,7 +1,7 @@
 """ Stub tests """
 import pytest
 from src.echo import echo
-from src.error import InputError
+from src.error_handler.api_error import InputError
 
 def test_echo():
     """ Stub test method"""
