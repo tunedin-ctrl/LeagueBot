@@ -144,3 +144,6 @@ cython_debug/
 
 # Log files
 **/tmp-log.txt
+
+# Print dir tree
+**/print_dir_tree.py
