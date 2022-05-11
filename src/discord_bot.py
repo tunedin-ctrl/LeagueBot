@@ -2,9 +2,9 @@
 Basic code for discordBot
 """
 from pathlib import Path
+import os
 from dotenv import load_dotenv
 import discord
-import os
 
 
 # Token contained in local environment
