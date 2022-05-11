@@ -2,6 +2,13 @@
 Basic code for discordBot
 """
 import discord
+import os
+from dotenv import load_dotenv
+from pathlib import Path
+
+# Token contained in local environment
+dotenv_path = Path('.env')
+load_dotenv(dotenv_path=dotenv_path)
 
 client = discord.Client()
 
@@ -23,4 +30,4 @@ async def on_message(message):
     if message.content == "hello":
         await message.channel.send('hello right back at you!')
 
-client.run('your secret discord token')
+client.run(os.getenv('TOKEN'))

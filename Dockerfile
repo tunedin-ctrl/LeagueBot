@@ -1,8 +1,8 @@
 FROM python:3
 FROM gorialis/discord.py
 
-RUN mkdir -p /home/disbot/LeagueBot/src/bot
-WORKDIR /home/disbot/LeagueBot/src/bot
+RUN mkdir -p /LeagueBot/src/bot
+WORKDIR /LeagueBot/src/bot
 
 COPY . .
 
