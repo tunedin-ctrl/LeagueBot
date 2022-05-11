@@ -15,5 +15,5 @@ src/
 ## Run app:
 python3 src/run.py
 
-# Additional Notes:
+## Additional Notes:
 Add your own token in .env file
