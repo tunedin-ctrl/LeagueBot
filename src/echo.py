@@ -1,4 +1,4 @@
-from src.error import InputError
+from src.error_handler.api_error import InputError
 
 """ Stub test"""
 def echo(value):
