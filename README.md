@@ -1,5 +1,6 @@
 # League Bot
 
+```text
 src/
 ├── api/
 ├── clients/ 
@@ -11,9 +12,12 @@ src/
 │   ├── api_error.py
 │   └── command_err.py
 └── run.py
+```
 
 ## Run app:
+```code
 python3 src/run.py
+```
 
 ## Additional Notes:
 Add your own token in .env file
