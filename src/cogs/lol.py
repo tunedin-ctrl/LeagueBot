@@ -1,6 +1,9 @@
 import discord
 import requests
 import json
+import os
+from pathlib import Path
+from dotenv import load_dotenv
 from src.error_handler import api_error
 
 class Lol(discord.ext.commands.Cog, name='Lol module'):
@@ -10,13 +13,16 @@ class Lol(discord.ext.commands.Cog, name='Lol module'):
 
     @discord.ext.commands.command(name="Matches")
     async def match_Hist(self, ctx, arg):
+        dotenv_path = Path('.env')
+        load_dotenv(dotenv_path=dotenv_path)
+        api_key = os.getenv('API_KEY')
         """
         Input: summoner Id
         Output: Match history
         """
         name = str(arg).strip()
         # use your own token
-        response = requests.get(f"https://oc1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{name}?api_key=RGAPI-f32bc481-2d67-4b84-bc82-9cdfa2d16358")
+        response = requests.get(f"https://oc1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{name}?api_key={api_key}")
         if response == 200:
             message = json.loads(response.text)
             print(message)
