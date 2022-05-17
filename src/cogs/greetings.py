@@ -16,4 +16,4 @@ class Greetings(discord.ext.commands.Cog, name='Greetings module'):
     async def on_member_join(self, member):
         channel = member.guild.system_channel
         if channel is not None:
-            await channel.send(f'A wild {member.mention} has appeared!')
+            await channel.send(f'A wild {member.mention} has appeared in {member.guild}!')

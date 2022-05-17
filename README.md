@@ -12,8 +12,11 @@ src/
 │   └── command_err.py
 └── run.py
 
+### install dependencies
+pip3 install -r requirements.txt
+
 ## Run app:
-python3 src/run.py
+python3 run.py
 
 ## Additional Notes:
 Add your own token in .env file
