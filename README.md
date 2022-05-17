@@ -20,3 +20,12 @@ python3 run.py
 
 ## Additional Notes:
 Add your own token in .env file
+
+### Run mongodb on docker
+go into /mongodb dir 
+ls: sudo docker ps -a
+init: sudo docker-compose up -d
+run: sudo docker exec -it mongodb bash
+
+#### inside docker
+run mongodb to use it
