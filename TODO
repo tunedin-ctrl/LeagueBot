@@ -1,5 +1,7 @@
 1. Create OOP stucture using Python 
     (No need for any creational, structural patterns, just a simple single bot rn. 
-    If later, more bots are created, depending on situation, adapter or factory pattern will be good)
+    If later, more bots are created, depending on situation, adapter or factory pattern will be good) 
+DONE
+
 2. Do API calls to RITO GAMES (requires testing)
 3. Host bot on heroku 
