@@ -20,6 +20,7 @@ python3 run.py
 
 ## Additional Notes:
 Add your own token in .env file
+Docker hosting mongodb (NoSQL) instead of using a json file as storage sys
 
 ### Run mongodb on docker
 go into /mongodb dir 
