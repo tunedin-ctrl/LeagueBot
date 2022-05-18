@@ -17,7 +17,7 @@ def save(user, cmd):
 def find_user_by_id(user):
     document = (loldb.find_one({"user": user}))
     alist = str(document.values())
-    x = alist.split(', ')[0]
+    x = alist.split(', ', maxsplit=1)[0]
     return (x[13:])
 
 
