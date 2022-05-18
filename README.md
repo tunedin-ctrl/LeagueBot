@@ -39,4 +39,4 @@ init: sudo docker-compose up -d
 run: sudo docker exec -it mongodb bash
 ```
 #### inside docker
-run mongodb to use it
+run mongo to use db
