@@ -4,7 +4,7 @@ import json
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-from src.error_handler import api_error
+from src.error_handler import command_err
 
 class Lol(discord.ext.commands.Cog, name='Lol module'):
 
@@ -27,7 +27,8 @@ class Lol(discord.ext.commands.Cog, name='Lol module'):
             message = json.loads(response.text)
             print(message)
         else:
-            raise api_error.AccessError(description=f"Summoner name {name} you have provided does not exist")
+            raise command_err(description=f"Summoner name {name} you have provided does not exist")
+            # raise api_error.AccessError(description=f"Summoner name {name} you have provided does not exist")
             # log into tmp storage to indicate that this id is flagged
             # later on use nosql to store data
 

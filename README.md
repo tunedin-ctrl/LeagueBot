@@ -17,6 +17,9 @@ pip3 install -r requirements.txt
 
 ## Run app:
 python3 run.py
+or
+docker build -t league_bot .
+docker run league_bot or docker run -d league_bot in the background
 
 ## Additional Notes:
 Add your own token in .env file

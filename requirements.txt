@@ -4,6 +4,7 @@ pip==20.0.2
 pylint==2.12.2
 py==1.11.0 
 discord==1.7.3
-requests==2.22.0
+requests==2.27.1
 python-dotenv==0.20.0
 Werkzeug==2.0.3
+pymongo==4.1.1
