@@ -27,7 +27,7 @@ class Lol(discord.ext.commands.Cog, name='Lol module'):
             message = json.loads(response.text)
             print(message)
         else:
-            raise command_err(description=f"Summoner name {name} you have provided does not exist")
+            raise command_err.CommandErrHandler(description=f"Summoner name {name} you have provided does not exist")
             # raise api_error.AccessError(description=f"Summoner name {name} you have provided does not exist")
             # log into tmp storage to indicate that this id is flagged
             # later on use nosql to store data
