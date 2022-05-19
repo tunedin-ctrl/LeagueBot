@@ -17,19 +17,13 @@ db = client.loldb
 col = db.lol
 
 def save(user, cmd):
-    print("here1")
-    print(user)
     _id = find_user_by_id(user)
     if _id:
-        print("here3")
-        print(_id, cmd)
         col.update_one(
             {"user": user},
             {'$push': {"cmd": cmd}}
         )
     else:
-        print("here2")
-
         col.insert_one(
             {
                 "user": f"{user}",
