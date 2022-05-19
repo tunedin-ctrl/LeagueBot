@@ -1,23 +1,50 @@
 from pymongo import MongoClient
-import re
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+
 
 # Creating a client
-client = MongoClient('mongodb://127.0.0.1:27017/')
+dotenv_path = Path('.env')
+load_dotenv(dotenv_path=dotenv_path)
+DB_UR_PASS = os.getenv('DB_UR_PASS')
+# client = MongoClient("mongodb://127.0.0.1:27017/")
+client = MongoClient(f"mongodb+srv://{DB_UR_PASS}/?retryWrites=true&w=majority")
+db = client.loldb
+
 # db cur
-db = client.bot
-loldb = db.loldb
+# db = client.bot
+col = db.lol
 
 def save(user, cmd):
+    print("here1")
+    print(user)
     _id = find_user_by_id(user)
     if _id:
-        loldb.update({"{_id": _id}, {"user": user}, {'$push': {"cmd": cmd}})
+        print("here3")
+        print(_id, cmd)
+        col.update_many({"_id": 'ObjectId("62862bfdd26affe2139154da")'}, {'$push': {"cmd": "$wulu"}})
+        # col.update_many(
+        #     {"_id": _id},
+        #     {'$set': {"cmd": cmd}}
+        # )
     else:
-        loldb.insert_one({"user": user}, {"cmd": cmd})
+        print("here2")
+
+        col.insert_one(
+            {
+                "user": f"{user}",
+                "cmd": [f"{cmd}"]
+            }
+        )
 
 def find_user_by_id(user):
-    document = (loldb.find_one({"user": user}))
-    alist = str(document.values())
-    x = alist.split(', ', maxsplit=1)[0]
-    return (x[13:])
-
+    # print(client.list_database_names())
+    document = col.find_one({"user": user})
+    if document:
+        alist = str(document.values())
+        x = alist.split(', ', maxsplit=1)[0]
+        return (x[13:])
+    else:
+        return None
 

@@ -7,5 +7,6 @@ class Log(discord.ext.commands.Cog, name='Logs'):
 
     @discord.ext.commands.Cog.listener()
     async def on_message(self, message:discord.Message):
-        if message.author != "LeagueBot#2540":
-            helper.save(message.author, message.content)   
+        if "LeagueBot#2540" not in str(message.author) and '$' in str(message.content):
+            # helper.find_user_by_id("yes#123")
+            helper.save(str(message.author), str(message.content))   
