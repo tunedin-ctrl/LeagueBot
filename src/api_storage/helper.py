@@ -23,11 +23,10 @@ def save(user, cmd):
     if _id:
         print("here3")
         print(_id, cmd)
-        col.update_many({"_id": 'ObjectId("62862bfdd26affe2139154da")'}, {'$push': {"cmd": "$wulu"}})
-        # col.update_many(
-        #     {"_id": _id},
-        #     {'$set': {"cmd": cmd}}
-        # )
+        col.update_one(
+            {"user": user},
+            {'$push': {"cmd": cmd}}
+        )
     else:
         print("here2")
 
