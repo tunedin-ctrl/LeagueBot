@@ -9,7 +9,7 @@ def init():
     load_dotenv()
     DB_UR_PASS = os.environ.get('DB_UR_PASS')
     # client = MongoClient("mongodb://127.0.0.1:27017/")
-    client = MongoClient(f"mongodb+srv://{DB_UR_PASS}/?retryWrites=true&w=majority")
+    client = MongoClient(f"mongodb+srv://{DB_UR_PASS}/?ssl=true&retryWrites=true&w=majority")
     db = client.loldb
     col = db.lol
     return col
