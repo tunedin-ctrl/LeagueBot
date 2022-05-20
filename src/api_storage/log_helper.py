@@ -6,8 +6,7 @@ from dotenv import load_dotenv
 
 # Creating a client
 def init():
-    dotenv_path = Path()
-    load_dotenv(dotenv_path=dotenv_path)
+    load_dotenv()
     DB_UR_PASS = os.environ.get('DB_UR_PASS')
     # client = MongoClient("mongodb://127.0.0.1:27017/")
     client = MongoClient(f"mongodb+srv://{DB_UR_PASS}/?retryWrites=true&w=majority")
