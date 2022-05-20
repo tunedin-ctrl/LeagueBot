@@ -1,5 +1,5 @@
 import discord
-from src.api_storage import helper
+from src.api_storage import log_helper
 
 class Log(discord.ext.commands.Cog, name='Logs'):
     def __init__(self, bot):
@@ -9,4 +9,4 @@ class Log(discord.ext.commands.Cog, name='Logs'):
     async def on_message(self, message:discord.Message):
         if "LeagueBot#2540" not in str(message.author) and '$' in str(message.content):
             # helper.find_user_by_id("yes#123")
-            helper.save(str(message.author), str(message.content))   
+            log_helper.save(str(message.author), str(message.content))   

@@ -16,18 +16,18 @@ db = client.loldb
 # db = client.bot
 col = db.lol
 
-def save(user, cmd):
+def save(user, data):
     _id = find_user_by_id(user)
     if _id:
         col.update_one(
             {"user": user},
-            {'$push': {"cmd": cmd}}
+            {'$push': {"cmd": data}}
         )
     else:
         col.insert_one(
             {
                 "user": f"{user}",
-                "cmd": [f"{cmd}"]
+                "cmd": [f"{data}"]
             }
         )
 
