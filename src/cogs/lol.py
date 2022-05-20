@@ -23,12 +23,14 @@ class Lol(discord.ext.commands.Cog, name='Lol module'):
         name = str(arg).strip()
         # use your own token
         response = requests.get(f"https://oc1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{name}?api_key={api_key}")
-        if response == 200:
+        # print(response.)
+        if response.status_code == 200:
             message = json.loads(response.text)
             print(message)
+            print(message["id"])
         else:
+            message = api_error.AccessError(description=f"Summoner name {name} you have provided does not exist")                
             raise api_error.AccessError(description=f"Summoner name {name} you have provided does not exist")
-            # log into tmp storage to indicate that this id is flagged
-            # later on use nosql to store data
 
-        await ctx.send(f'Hey {message}')
+            
+        await ctx.send(message)

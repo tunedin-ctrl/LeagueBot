@@ -147,3 +147,4 @@ cython_debug/
 
 # Print dir tree
 /print_dir_tree.py
+/src/api_storage/mongodb/
