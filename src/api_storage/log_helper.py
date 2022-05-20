@@ -5,18 +5,18 @@ from dotenv import load_dotenv
 
 
 # Creating a client
-dotenv_path = Path('.env')
-load_dotenv(dotenv_path=dotenv_path)
-DB_UR_PASS = os.getenv('DB_UR_PASS')
-# client = MongoClient("mongodb://127.0.0.1:27017/")
-client = MongoClient(f"mongodb+srv://{DB_UR_PASS}/?retryWrites=true&w=majority")
-db = client.loldb
-
-# db cur
-# db = client.bot
-col = db.lol
+def init():
+    dotenv_path = Path('.env')
+    load_dotenv(dotenv_path=dotenv_path)
+    DB_UR_PASS = os.getenv('DB_UR_PASS')
+    # client = MongoClient("mongodb://127.0.0.1:27017/")
+    client = MongoClient(f"mongodb+srv://{DB_UR_PASS}/?retryWrites=true&w=majority")
+    db = client.loldb
+    col = db.lol
+    return col
 
 def save(user, data):
+    col = init()
     _id = find_user_by_id(user)
     if _id:
         col.update_one(
@@ -32,8 +32,7 @@ def save(user, data):
         )
 
 def find_user_by_id(user):
-    # print(client.list_database_names())
-    document = col.find_one({"user": user})
+    document = find_user(user)
     if document:
         alist = str(document.values())
         x = alist.split(', ', maxsplit=1)[0]
@@ -41,3 +40,10 @@ def find_user_by_id(user):
     else:
         return None
 
+def find_user(user):
+    col = init()
+    return col.find_one({"user": user})
+
+def delete_user(user):
+    col = init()
+    col.delete_one({"user": user})
