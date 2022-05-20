@@ -14,9 +14,9 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-        credentials: ${{ secrets.DB_UR_PASS }}
+        DB_UR_PASS: ${{ secrets.DB_UR_PASS }}
       env:
-        credentials: ${{ secrets.DB_UR_PASS }}
+        DB_UR_PASS: ${{ secrets.DB_UR_PASS }}
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
