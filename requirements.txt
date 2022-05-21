@@ -7,3 +7,4 @@ discord==1.7.3
 requests==2.22.0
 python-dotenv==0.20.0
 Werkzeug==2.0.3
+roman==3.3
