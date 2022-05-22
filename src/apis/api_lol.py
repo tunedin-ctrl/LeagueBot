@@ -59,8 +59,8 @@ def get_summoner_info(name):
         if response.status_code == 200:
             summoner_info = json.loads(response.text)
             return summoner_info
-    except:
-        raise api_error.AccessError(description=f"summoner id not found!")      
+    except Exception as e:
+        raise api_error.AccessError(e)      
 
 
 def helper_decision_tree():
