@@ -9,6 +9,6 @@ class Lol(discord.ext.commands.Cog, name='Lol module'):
     @discord.ext.commands.command(name="Analysis")
     async def match_analysis(self, ctx, arg):
         name = str(arg).strip()
-        response = api_lol.lol(name)
+        response = api_lol.lolAnalysis(name)
             
         await ctx.send(response)
