@@ -1,5 +1,5 @@
 import discord
-from src.api_storage import log_helper
+from src.apis import log_helper
 
 class Log(discord.ext.commands.Cog, name='Logs'):
     def __init__(self, bot):

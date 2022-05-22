@@ -28,7 +28,6 @@ docker build -t league_bot .
 docker run league_bot or docker run -d league_bot in the background
 ```
 
-
 ## Additional Notes:
 Add your own token in .env file
 Docker hosting mongodb (NoSQL) instead of using a json file as storage sys
