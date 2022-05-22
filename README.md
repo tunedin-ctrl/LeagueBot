@@ -2,16 +2,24 @@
 
 ```text
 src/
-├── api/
-├── clients/ 
+├── __init__.py
+├── apis/
+│   ├── api_lol.py
+│   ├── log_helper.py
+│   └── mongodb/
+│       ├── docker-compose.yml
+│       ├── dockerfile
+│       └── sudo
+├── clients/
 │   └── bot_client.py
 ├── cogs/
-│   └── greetings.py
+│   ├── greetings.py
+│   ├── log.py
+│   └── lol.py
 ├── echo.py
-├── error_handler/
-│   ├── api_error.py
-│   └── command_err.py
-└── run.py
+└── error_handler/
+    ├── api_error.py
+    └── command_err.py
 ```
 
 ### install dependencies
