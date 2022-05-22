@@ -19,6 +19,7 @@ def lolAnalysis(name):
     match_ids = requests.get(f'https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?type=ranked&start=0&count=2&api_key={api_key}')
     if match_ids.status_code == 200:
         matchId = json.loads(match_ids.text)
+        
         json_array = {
             f'{name}': []
         }
@@ -28,9 +29,16 @@ def lolAnalysis(name):
                 match_det = json.loads(match.text)
                 for sumName in match_det['info']['participants']:
                     del sumName['perks']
+                    del sumName['summonerId']
+                    del sumName['summonerLevel']
+                    del sumName['puuid']
+                    del sumName['profileIcon']
+
                     if sumName['summonerName'] == name:
                         json_array[name].append(sumName)
-        with open('lol_db.json', 'a') as match_file:
+                        del sumName['summonerName']
+
+        with open('lol_db.json', 'w') as match_file:
             json.dump(json_array, match_file, indent=4, separators=(',',': '))
             match_file.write('\n')
         
