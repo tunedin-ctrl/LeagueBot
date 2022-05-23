@@ -13,4 +13,5 @@ def test_user_details():
     
 def test_decision_tree():
     name= "MiliterryNasus"
-    api_lol.lolAnalysis(name)
+    # api_lol.lolAnalysis(name)
+    api_lol.helper_decision_tree(name)
