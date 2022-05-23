@@ -20,7 +20,7 @@ def test_get_match_ids():
     puuid = summoner_info["puuid"]
     puuid2 = summoner_info2["puuid"]
     output = api_lol.get_match_ids(puuid)
-    output2 = (api_lol.get_summoner_info(puuid2))
+    output2 = (api_lol.get_match_ids(puuid2))
     output = ''.join(str(x) for x in output)
     output2 = ''.join(str(x) for x in output2)
     assert "OC1" in output
