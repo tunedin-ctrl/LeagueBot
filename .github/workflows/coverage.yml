@@ -16,11 +16,13 @@ jobs:
         python-version: 3.8      
     - name: Install dependencies
       run: |
+        sudo apt-get install graphviz
         python -m pip install --upgrade pip
         pip install flake8 pytest pytest-cov
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Build coverage file
       env:
+        API_KEY: ${{ secrets.API_KEY }}
         DB_UR_PASS: ${{ secrets.DB_UR_PASS }}
       run: |
         coverage run -m pytest tests/ --junitxml=pytest_report.xml

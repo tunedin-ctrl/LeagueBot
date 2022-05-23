@@ -9,3 +9,10 @@ python-dotenv==0.20.0
 Werkzeug==2.0.3
 pymongo==4.1.1
 dnspython==2.2.1
+pandas==1.4.2
+sklearn==0.0
+six==1.14.0
+category-encoders==2.4.1
+ipython==8.3.0
+graphviz==0.20
+pydotplus==2.0.2
