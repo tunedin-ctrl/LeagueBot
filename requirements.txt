@@ -11,4 +11,8 @@ pymongo==4.1.1
 dnspython==2.2.1
 pandas==1.4.2
 sklearn==0.0
-matplotlib==3.5.2
+six==1.14.0
+category-encoders==2.4.1
+ipython==8.3.0
+graphviz==0.20
+pydotplus==2.0.2
