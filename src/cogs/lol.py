@@ -13,4 +13,14 @@ class Lol(discord.ext.commands.Cog, name='Lol module'):
         path = api_lol.lolAnalysis(name)
         with open(path, 'rb') as f:
             picture = discord.File(f)
-            await ctx.send(picture)
+            await ctx.send(file=picture)
+    
+    # log command usage. if $Analysis <name> used three times within 2min, then freeze command for 2min
+    @discord.ext.commands.Cog.listener()
+    async def on_analysis(self, message:discord.Message):
+        '''
+        if used in two min, raise error
+        '''
+        pass
+
+    
