@@ -8,7 +8,9 @@ class Lol(discord.ext.commands.Cog, name='Lol module'):
 
     @discord.ext.commands.command(name="Analysis")
     async def match_analysis(self, ctx, arg):
+        await ctx.send("This may take a while...")
         name = str(arg).strip()
-        response = api_lol.lolAnalysis(name)
-            
-        await ctx.send(response)
+        path = api_lol.lolAnalysis(name)
+        with open(path, 'rb') as f:
+            picture = discord.File(f)
+            await ctx.send(picture)

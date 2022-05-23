@@ -27,7 +27,7 @@ def lolAnalysis(name):
     summoner_info = get_summoner_info(name)
     puuid = summoner_info["puuid"]
     
-    matchId = get_match_ids(name)
+    matchId = get_match_ids(puuid)
     json_array = {
         f'{name}': []
     }
@@ -77,7 +77,7 @@ def get_summoner_info(name):
     except Exception as e:
         raise api_error.AccessError(e)      
 
-def get_match_ids(name):
+def get_match_ids(puuid):
     '''
     get match id
     '''
