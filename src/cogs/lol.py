@@ -12,9 +12,10 @@ class Lol(discord.ext.commands.Cog, name='Lol module'):
     @discord.ext.commands.command(name="Analysis")
     async def match_analysis(self, ctx, arg):
         global counter
-        global start
+       
         if counter >= 3:
             stop = time.time()
+            global start
             elapsed_time = stop - start
             if elapsed_time == 120:
                 time.sleep(120)
