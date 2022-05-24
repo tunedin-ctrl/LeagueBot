@@ -15,7 +15,6 @@ class Lol(discord.ext.commands.Cog, name='Lol module'):
        
         if counter >= 3:
             stop = time.time()
-            global start
             elapsed_time = stop - start
             if elapsed_time == 120:
                 time.sleep(120)
